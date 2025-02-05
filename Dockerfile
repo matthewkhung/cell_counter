@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/matthewkhung/cell_counter.git .
 
+RUN apt-get update && apt-get install -y libglib2.0-0 libgl1-mesa-glx && rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install -r requirements.txt
 
 EXPOSE 8501

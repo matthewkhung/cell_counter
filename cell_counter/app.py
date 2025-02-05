@@ -23,7 +23,7 @@ class CellCounterApp:
             # load raw image
             img_raw = cv2.imread(self.default_image_path)
             # show raw image
-            fig = px.imshow(img_raw, color_continuous_scale='gray')
+            fig = px.imshow(img_raw.astype(int), color_continuous_scale='gray')
             st.plotly_chart(fig)
             # documentation
             st.code(
