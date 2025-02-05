@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 class CellCounterApp:
     def __init__(self):
         st.set_page_config(page_title='Cell Counter App', layout='wide', initial_sidebar_state='auto')
-        self.default_image_path = "../data/images/cell-1.jpg"
+        self.default_image_path = "data/images/cell-1.jpg"
 
     def run(self):
         # streamlit title
@@ -23,7 +23,7 @@ class CellCounterApp:
             # load raw image
             img_raw = cv2.imread(self.default_image_path)
             # show raw image
-            fig = px.imshow(img_raw.astype(int), color_continuous_scale='gray')
+            fig = px.imshow(img_raw, color_continuous_scale='gray')
             st.plotly_chart(fig)
             # documentation
             st.code(
